@@ -6,13 +6,10 @@ export const initialState = {
   top_artists: null,
   playing: false,
   item: null,
-  //remove after developing
-  token:
-    "BQAU2Z2JVTJHJCj-FBC4ZgBHDcB84IZTnWS6-QZaLMLCAZnUdvjtOlhZEjcxSGLsUoiFEx-nZq9LH14Owwbhalc4AtJXk1xSroK9M9RFA1PaYyT5fLkCLJXoWdI7WuunhP02UcTpURTUYzcU277gOUJX91H7_c9p2eLUf2dWUPZtdeFT5F8l",
 };
 
 const reducer = (state, action) => {
-  console.log(action);
+  console.table(action);
   switch (action.type) {
     case "SET_USER":
       return {
@@ -28,6 +25,11 @@ const reducer = (state, action) => {
       return {
         ...state,
         playlists: action.playlists,
+      };
+    case "SET_DISCOVER_WEEKLY":
+      return {
+        ...state,
+        discover_weekly: action.discover_weekly,
       };
 
     default:
